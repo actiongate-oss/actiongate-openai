@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "actiongate-openai"
+version = "0.1.0"
+description = "Gate OpenAI function/tool calls through ActionGate primitives before execution."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+authors = [
+    { name = "ActionGate OSS", email = "actiongate-oss@users.noreply.github.com" }
+]
+keywords = [
+    "actiongate",
+    "openai",
+    "function-calling",
+    "tool-use",
+    "ai-agents",
+    "guardrails",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "actiongate>=0.2.0",
+]
+
+[project.optional-dependencies]
+budget = ["budgetgate>=0.2.0"]
+rules = ["rulegate>=0.2.0"]
+audit = ["auditgate>=0.1.0"]
+all = [
+    "budgetgate>=0.2.0",
+    "rulegate>=0.2.0",
+    "auditgate>=0.1.0",
+]
+dev = [
+    "pytest>=8.0",
+    "openai>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/actiongate-oss/actiongate-openai"
+Documentation = "https://github.com/actiongate-oss/actiongate-openai#readme"
+Repository = "https://github.com/actiongate-oss/actiongate-openai"
+
+[tool.hatch.build.targets.wheel]
+packages = ["actiongate_openai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
