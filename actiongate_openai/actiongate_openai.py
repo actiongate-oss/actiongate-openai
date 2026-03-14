@@ -178,7 +178,6 @@ class GatedToolRunner:
 
         # ── ActionGate: rate limiting ──
         if self._ag and reg.gate:
-            from actiongate import Status
             decision = self._ag.check(reg.gate, reg.policy)
             decisions["actiongate"] = decision.to_dict()
             if decision.blocked:
