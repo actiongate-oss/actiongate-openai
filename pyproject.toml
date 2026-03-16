@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "actiongate-openai"
-version = "0.1.0"
+version = "0.2.0"
 description = "Gate OpenAI function/tool calls through ActionGate primitives before execution."
 readme = "README.md"
 license = "Apache-2.0"
@@ -18,7 +18,7 @@ keywords = [
     "function-calling",
     "tool-use",
     "ai-agents",
-    "guardrails",
+    "execution-control",
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -30,17 +30,17 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "actiongate>=0.2.0",
+    "actiongate>=0.2.2",
 ]
 
 [project.optional-dependencies]
-budget = ["budgetgate>=0.2.0"]
-rules = ["rulegate>=0.2.0"]
-audit = ["auditgate>=0.1.0"]
+budget = ["budgetgate>=0.3.0"]
+rules = ["rulegate>=0.2.2"]
+audit = ["auditgate>=0.2.0"]
 all = [
-    "budgetgate>=0.2.0",
-    "rulegate>=0.2.0",
-    "auditgate>=0.1.0",
+    "budgetgate>=0.3.0",
+    "rulegate>=0.2.2",
+    "auditgate>=0.2.0",
 ]
 dev = [
     "pytest>=8.0",
